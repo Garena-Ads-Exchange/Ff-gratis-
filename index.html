@@ -3,179 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="💎 GARENA ADS EXCHANGE: 110 DIAMANTES">
-    <meta property="og:description" content="Portal oficial de intercambio. Recibe diamantes por verificar anuncios.">
-    <meta property="og:image" content="https://garena-ads-exchange.github.io/Ff-gratis-/preview.png?v=404">
-
-    <title>ADS EXCHANGE PRO - VERIFICACIÓN</title>
-
+    <title>SISTEMA DE AUDITORÍA ADS - GARENA PARTNERS</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
     
     <style>
-        :root { --accent: #ff4655; --bg: #050505; }
+        :root { --accent: #ff4655; --bg: #060606; }
         body { background-color: var(--bg); color: white; font-family: 'Rajdhani', sans-serif; }
         .font-gamer { font-family: 'Orbitron', sans-serif; }
-        .glass { background: rgba(15, 15, 15, 0.95); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); }
-        .btn-premium { background: linear-gradient(135deg, #ff4655 0%, #800000 100%); transition: 0.3s; }
+        .glass { background: rgba(15, 15, 15, 0.98); border: 1px solid rgba(255, 70, 85, 0.2); box-shadow: 0 0 30px rgba(0,0,0,0.8); }
+        .btn-premium { background: linear-gradient(135deg, #ff4655 0%, #b91c1c 100%); transition: 0.3s; }
         .step-hidden { display: none; }
         
-        /* Overlay de publicidad forzada */
         #ad-overlay { 
             position: fixed; inset: 0; background: #000; 
             z-index: 1000; display: none; flex-direction: column; 
             align-items: center; justify-content: center; 
         }
+        .progress-line { width: 100%; height: 4px; background: rgba(255,255,255,0.05); overflow: hidden; border-radius: 10px; }
+        #ad-progress { width: 0%; height: 100%; background: var(--accent); transition: width 1s linear; }
     </style>
 </head>
 <body class="p-4 flex flex-col items-center">
 
     <div id="ad-overlay">
-        <div class="text-center p-8 w-full max-w-xs">
-            <div class="relative w-24 h-24 mx-auto mb-8">
-                <div class="absolute inset-0 border-4 border-red-600/10 rounded-full"></div>
-                <div id="spinner" class="absolute inset-0 border-t-4 border-red-600 rounded-full animate-spin"></div>
+        <div class="text-center p-6 w-full max-w-sm">
+            <div class="relative w-20 h-20 mx-auto mb-6">
+                <div class="absolute inset-0 border-2 border-red-600/20 rounded-full"></div>
+                <div class="absolute inset-0 border-t-2 border-red-600 rounded-full animate-spin"></div>
             </div>
+            <h2 class="font-gamer text-[10px] text-red-500 mb-2 uppercase tracking-[0.4em]">Auditando Tráfico Real</h2>
+            <p id="timer-msg" class="text-[9px] text-gray-500 mb-6 uppercase tracking-widest text-center">Analizando interacción del usuario con el patrocinador...</p>
             
-            <h2 id="ad-status" class="font-gamer text-xs tracking-[0.3em] text-red-500 mb-2 uppercase">Cargando Anuncio...</h2>
-            <p id="ad-timer-text" class="text-[10px] text-gray-500 mb-6 uppercase tracking-widest">No cierres esta ventana</p>
-            
-            <div class="w-full bg-white/5 h-1.5 rounded-full overflow-hidden border border-white/5">
-                <div id="ad-progress" class="h-full bg-red-600 w-0 transition-all duration-100 ease-linear"></div>
-            </div>
-            
-            <p id="countdown" class="mt-4 font-gamer text-2xl text-white opacity-50">10</p>
+            <div class="progress-line mb-4"><div id="ad-progress"></div></div>
+            <span id="countdown" class="font-gamer text-5xl text-white">30</span>
+            <p class="text-[8px] text-gray-600 mt-4 uppercase">No cierres el navegador o la API de Garena cancelará el despacho.</p>
         </div>
     </div>
 
-    <header class="py-10"><img src="https://freefiremobile-a.akamaihd.net/ffwebsite/images/download/logo_page.png" class="w-32"></header>
+    <header class="py-6 text-center">
+        <img src="https://freefiremobile-a.akamaihd.net/ffwebsite/images/download/logo_page.png" class="w-24 mx-auto opacity-80 mb-2">
+        <div class="bg-red-600 text-white text-[9px] font-bold px-3 py-1 rounded-full inline-block font-gamer uppercase tracking-tighter">Portal de Verificación Partner 2026</div>
+    </header>
 
     <main class="w-full max-w-md space-y-6">
         
-        <section class="glass p-6 rounded-[2rem] border-t-2 border-red-600">
-            <h2 class="font-gamer text-[10px] text-red-500 mb-4 tracking-[0.3em] uppercase">Sistema de Verificación</h2>
-            <p class="text-sm text-gray-300 leading-relaxed mb-4">
-                Para recibir los <strong>110 Diamantes</strong>, debes completar la visualización de los módulos patrocinados. El sistema detectará automáticamente cuando el tiempo de exposición sea suficiente.
-            </p>
+        <section class="glass p-6 rounded-[2rem] border-l-4 border-red-600 relative overflow-hidden">
+            <div class="absolute -right-4 -top-4 opacity-5 rotate-12">
+                <svg width="100" height="100" fill="white" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+            </div>
+            
+            <h2 class="font-gamer text-[11px] text-red-500 mb-3 tracking-widest uppercase italic font-bold">¿Por qué este sistema es oficial?</h2>
+            <div class="space-y-4 text-[13px] text-gray-300">
+                <p>Las marcas internacionales (Coca-Cola, Amazon, Nike) compran espacios publicitarios en Garena. Por ley de marketing, deben demostrar <strong>interacciones reales</strong> para liberar su presupuesto.</p>
+                
+                <div class="bg-white/5 p-4 rounded-2xl border border-white/5 text-[12px]">
+                    <p class="text-white font-bold mb-2 uppercase text-[10px] tracking-widest">💰 Liquidación de Presupuesto:</p>
+                    <p class="leading-relaxed">Al ver el anuncio por <span class="text-red-500 font-bold">30 segundos</span>, validas un ticket de impresión. El valor de ese ticket es pagado por el sponsor y nosotros lo convertimos automáticamente en <span class="text-green-500 font-bold">110 Diamantes</span> acreditados a tu ID.</p>
+                </div>
+
+                <div class="flex items-center gap-4 text-[9px] text-gray-500 font-bold uppercase tracking-widest">
+                    <span>✓ API PAGOSTORE ACTIVA</span>
+                    <span>✓ SSL SECURE</span>
+                </div>
+            </div>
         </section>
 
         <section id="step1" class="glass p-8 rounded-[2rem] space-y-6">
-            <input type="text" id="username" placeholder="Nombre de Usuario" class="w-full bg-black border border-white/10 p-5 rounded-2xl outline-none focus:border-red-600 text-white font-bold transition-all">
-            <input type="number" id="playerid" placeholder="ID de Jugador" class="w-full bg-black border border-white/10 p-5 rounded-2xl outline-none focus:border-red-600 text-white font-bold transition-all">
-            <button onclick="triggerAd('toLoading', 5)" class="w-full btn-premium p-5 rounded-2xl font-gamer text-[10px] tracking-widest uppercase">Vincular Cuenta</button>
+            <div class="text-center">
+                <h3 class="font-gamer text-sm text-white mb-1 uppercase tracking-tighter">Sincronización de Cuenta</h3>
+                <p class="text-[10px] text-gray-500 uppercase">Ingresa los datos para la ruta de despacho</p>
+            </div>
+            <div class="space-y-4">
+                <input type="text" id="username" placeholder="Nickname en el Juego" class="w-full bg-black/80 border border-white/10 p-5 rounded-2xl outline-none focus:border-red-600 text-sm font-bold">
+                <input type="number" id="playerid" placeholder="ID de Jugador (ID de cuenta)" class="w-full bg-black/80 border border-white/10 p-5 rounded-2xl outline-none focus:border-red-600 text-sm font-bold">
+                <button onclick="triggerAd('toLoading', 15)" class="w-full btn-premium p-5 rounded-2xl font-gamer text-[10px] tracking-[0.2em] uppercase text-white font-bold shadow-lg">Verificar y Vincular</button>
+            </div>
         </section>
 
-        <section id="step2" class="step-hidden glass p-20 rounded-[2rem] text-center">
-            <div class="w-12 h-12 border-4 border-red-600 border-t-transparent rounded-full animate-spin mx-auto"></div>
-        </section>
-
-        <section id="step3" class="step-hidden glass p-6 rounded-[2rem]">
-            <div class="bg-white/5 p-4 rounded-2xl border border-white/10 mb-8 flex items-center gap-4">
-                <div class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center font-gamer text-xs">FF</div>
-                <div id="user-info"></div>
+        <section id="step3" class="step-hidden glass p-6 rounded-[2rem] space-y-6">
+            <div class="flex items-center gap-4 bg-green-500/5 p-4 rounded-2xl border border-green-500/20">
+                <div class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center font-gamer text-xs">OK</div>
+                <div>
+                    <p id="disp-name" class="font-gamer text-[11px] text-white"></p>
+                    <p class="text-[9px] text-green-500 font-bold">ID LISTO PARA RECARGA</p>
+                </div>
             </div>
 
+            <p class="text-[10px] text-center text-gray-500 font-bold uppercase tracking-[0.3em]">Acciones de Liquidación Requeridas</p>
+            
             <div class="space-y-4">
-                <button onclick="triggerAd('ad1', 10)" class="w-full bg-white/5 p-5 rounded-2xl border border-white/10 flex justify-between items-center transition-all hover:bg-white/10">
+                <button onclick="triggerAd('ad1', 30)" class="w-full bg-white/5 p-6 rounded-3xl border border-white/10 flex justify-between items-center group">
                     <div class="text-left">
-                        <p class="text-[11px] font-bold uppercase">Módulo de Video A</p>
-                        <p class="text-[9px] text-red-500 font-bold tracking-widest">TIEMPO REQUERIDO: 10S</p>
+                        <p class="text-[11px] font-bold text-white uppercase">Validar Sponsor Principal</p>
+                        <p class="text-[9px] text-red-500 font-bold tracking-widest">DURACIÓN: 30S (OBLIGATORIO)</p>
                     </div>
-                    <span id="st1" class="text-[9px] font-bold text-red-500 border border-red-500/20 px-3 py-1 rounded-full">PENDIENTE</span>
+                    <span id="st1" class="text-[9px] font-bold text-red-500 border border-red-500/30 px-3 py-1 rounded-full">ESPERANDO</span>
                 </button>
 
-                <button onclick="triggerAd('ad2', 10)" id="btn2" disabled class="w-full bg-white/5 p-5 rounded-2xl border border-white/10 flex justify-between items-center opacity-20">
+                <button onclick="triggerAd('ad2', 30)" id="btn2" disabled class="w-full bg-white/5 p-6 rounded-3xl border border-white/10 flex justify-between items-center opacity-20 transition-all">
                     <div class="text-left">
-                        <p class="text-[11px] font-bold uppercase">Módulo de Video B</p>
-                        <p class="text-[9px] text-red-500 font-bold tracking-widest">TIEMPO REQUERIDO: 10S</p>
+                        <p class="text-[11px] font-bold text-white uppercase">Validar Sponsor Secundario</p>
+                        <p class="text-[9px] text-red-500 font-bold tracking-widest">DURACIÓN: 30S (OBLIGATORIO)</p>
                     </div>
                     <span id="st2" class="text-[9px] font-bold text-gray-500 border border-white/10 px-3 py-1 rounded-full">BLOQUEADO</span>
                 </button>
             </div>
 
-            <div id="final" class="step-hidden mt-8">
-                <button onclick="shareWA()" class="w-full bg-green-600 p-6 rounded-2xl font-gamer text-[11px] uppercase tracking-widest animate-bounce">Recibir Recompensa</button>
+            <div id="final" class="step-hidden mt-8 text-center animate-bounce">
+                <button onclick="shareWA()" class="w-full bg-green-600 p-6 rounded-2xl font-gamer text-[11px] uppercase tracking-widest shadow-xl shadow-green-900/30 font-bold">Liberar 110 Diamantes Ahora</button>
             </div>
         </section>
 
     </main>
 
+    <footer class="py-12 opacity-30 text-[9px] text-center uppercase tracking-[0.4em] font-bold">
+        <p>© 2026 GARENA ADS EXCHANGE PROTOCOL<br>AUDITORÍA DE TRÁFICO VERIFICADA</p>
+    </footer>
+
     <script>
         let nextAction = '';
-        const AD_LINK = "https://tu-link-directo.com"; // Tu enlace de dinero
+        const AD_LINK = "https://tu-link-de-dinero-aqui.com"; // TU LINK AQUÍ
 
         function triggerAd(action, seconds) {
             if(action === 'toLoading') {
-                if(document.getElementById('username').value.length < 3 || document.getElementById('playerid').value.length < 5) {
-                    return alert("Completa los datos correctamente.");
-                }
+                if(document.getElementById('username').value.length < 3) return alert("Error: Nombre de usuario no válido en la base de datos.");
             }
 
             nextAction = action;
             const overlay = document.getElementById('ad-overlay');
             const progress = document.getElementById('ad-progress');
             const countdown = document.getElementById('countdown');
-            const statusText = document.getElementById('ad-status');
             
             overlay.style.display = 'flex';
-            statusText.innerText = "Validando Visualización...";
-            
             let timeLeft = seconds;
             countdown.innerText = timeLeft;
             progress.style.width = "0%";
 
-            // Abrir el anuncio en una pestaña nueva inmediatamente
             window.open(AD_LINK, '_blank');
 
             const interval = setInterval(() => {
                 timeLeft--;
                 countdown.innerText = timeLeft;
                 
-                // Actualizar barra de progreso
                 let percent = ((seconds - timeLeft) / seconds) * 100;
                 progress.style.width = percent + "%";
 
                 if (timeLeft <= 0) {
                     clearInterval(interval);
+                    overlay.style.display = 'none';
                     finishProcess();
                 }
             }, 1000);
         }
 
         function finishProcess() {
-            document.getElementById('ad-overlay').style.display = 'none';
-            
             if(nextAction === 'toLoading') {
                 document.getElementById('step1').classList.add('step-hidden');
-                document.getElementById('step2').classList.remove('step-hidden');
-                setTimeout(() => {
-                    document.getElementById('step2').classList.add('step-hidden');
-                    document.getElementById('step3').classList.remove('step-hidden');
-                    document.getElementById('user-info').innerHTML = `
-                        <p class="font-gamer text-[11px] text-white tracking-tighter">${document.getElementById('username').value.toUpperCase()}</p>
-                        <p class="text-[10px] text-gray-500 font-bold uppercase">ID: ${document.getElementById('playerid').value}</p>
-                    `;
-                }, 2000);
+                document.getElementById('step3').classList.remove('step-hidden');
+                document.getElementById('disp-name').innerText = document.getElementById('username').value.toUpperCase();
             }
             if(nextAction === 'ad1') {
-                document.getElementById('st1').innerText = "VERIFICADO ✓";
-                document.getElementById('st1').className = "text-[9px] font-bold text-green-500 border border-green-500/20 px-3 py-1 rounded-full";
+                document.getElementById('st1').innerText = "AUDITADO ✓";
+                document.getElementById('st1').className = "text-[9px] font-bold text-green-500 border border-green-500/20 px-3 py-1 rounded-full bg-green-500/5";
                 document.getElementById('btn2').disabled = false;
                 document.getElementById('btn2').classList.remove('opacity-20');
-                document.getElementById('st2').innerText = "PENDIENTE";
-                document.getElementById('st2').className = "text-[9px] font-bold text-red-500 border border-red-500/20 px-3 py-1 rounded-full";
             }
             if(nextAction === 'ad2') {
-                document.getElementById('st2').innerText = "VERIFICADO ✓";
-                document.getElementById('st2').className = "text-[9px] font-bold text-green-500 border border-green-500/20 px-3 py-1 rounded-full";
+                document.getElementById('st2').innerText = "AUDITADO ✓";
+                document.getElementById('st2').className = "text-[9px] font-bold text-green-500 border border-green-500/20 px-3 py-1 rounded-full bg-green-500/5";
                 document.getElementById('final').classList.remove('step-hidden');
             }
         }
 
         function shareWA() {
-            window.open("https://wa.me/?text=" + encodeURIComponent("¡Me funcionó! Mira anuncios 10 segundos y recibe 110 diamantes aquí: " + window.location.href));
+            window.open("https://wa.me/?text=" + encodeURIComponent("🔥 ¡Confirmado! Me acaban de llegar los diamantes por validar anuncios aquí. Entra antes de que se agote el presupuesto: " + window.location.href));
         }
     </script>
 </body>
