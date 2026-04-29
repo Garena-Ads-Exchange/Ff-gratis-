@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SISTEMA DE RECOMPENSAS - PROTOCOLO FF</title>
+    <title>SISTEMA DE RECOMPENSAS - GARENA ADS EXCHANGE</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
     <style>
@@ -12,8 +12,21 @@
         .glass { background: rgba(0, 0, 0, 0.9); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; }
         .font-gamer { font-family: 'Orbitron', sans-serif; }
         .step-hidden { display: none; }
-        .btn-action { background: linear-gradient(180deg, #ff4655, #800000); transition: 0.3s; box-shadow: 0 0 20px rgba(255, 70, 85, 0.3); }
-        .btn-action:active { transform: scale(0.98); }
+        
+        /* BOTÓN CON BRILLO (GLOW) */
+        .btn-glow {
+            background: linear-gradient(180deg, #ff4655, #800000);
+            transition: 0.3s;
+            box-shadow: 0 0 15px rgba(255, 70, 85, 0.6);
+            animation: pulse-red 2s infinite;
+        }
+        @keyframes pulse-red {
+            0% { box-shadow: 0 0 5px rgba(255, 70, 85, 0.6); }
+            50% { box-shadow: 0 0 25px rgba(255, 70, 85, 0.9); }
+            100% { box-shadow: 0 0 5px rgba(255, 70, 85, 0.6); }
+        }
+        .btn-glow:active { transform: scale(0.95); }
+        
         #ad-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.98); z-index: 100; display: none; flex-direction: column; align-items: center; justify-content: center; }
     </style>
 </head>
@@ -30,33 +43,41 @@
         </div>
     </div>
 
-    <header class="text-center my-8">
-        <img src="https://freefiremobile-a.akamaihd.net/ffwebsite/images/download/logo_page.png" class="w-36 mx-auto opacity-80">
+    <div class="w-full max-w-md flex justify-between px-2 mb-4">
+        <div class="flex items-center gap-2">
+            <div class="w-2 h-2 bg-green-500 rounded-full animate-ping"></div>
+            <p class="text-[10px] text-green-400 font-bold uppercase">En Línea: <span id="user-count">1,428</span></p>
+        </div>
+        <p class="text-[10px] text-gray-400 uppercase">Enviados Hoy: <span class="text-white">84,500 💎</span></p>
+    </div>
+
+    <header class="text-center mb-8">
+        <img src="https://freefiremobile-a.akamaihd.net/ffwebsite/images/download/logo_page.png" class="w-32 mx-auto opacity-80">
     </header>
 
     <main class="w-full max-w-md">
         
         <section id="step1" class="glass p-6 border-t-2 border-white/20">
-            <h1 class="font-gamer text-sm text-center mb-6 tracking-widest">PROTOCOLO DE RECOMPENSA 2026</h1>
+            <h1 class="font-gamer text-sm text-center mb-6 tracking-widest text-red-500">GARENA ADS EXCHANGE</h1>
             
             <div class="space-y-4 mb-8">
                 <div class="bg-white/5 p-4 rounded-xl border-l-4 border-red-600">
-                    <p class="text-[11px] font-bold text-red-500 uppercase mb-1">¿Cómo es posible esto?</p>
-                    <p class="text-[10px] text-gray-300">Este panel conecta a jugadores con patrocinadores globales. Las empresas pagan por tu interacción y nosotros convertimos ese valor en diamantes para tu ID.</p>
+                    <p class="text-[11px] font-bold text-red-500 uppercase mb-1">PROTOCOLO DE INTERCAMBIO</p>
+                    <p class="text-[10px] text-gray-300">Este portal conecta tu ID con patrocinadores globales. Genera créditos mediante visualización publicitaria y recíbelos como diamantes oficiales.</p>
                 </div>
 
                 <div class="grid grid-cols-1 gap-3 text-[10px] text-gray-400">
                     <div class="flex items-start gap-2">
                         <span class="text-red-500">01.</span>
-                        <p>Vincula tu Nombre y Player ID correctamente para evitar errores en el envío.</p>
+                        <p>Vincula tu ID de cuenta correctamente.</p>
                     </div>
                     <div class="flex items-start gap-2">
                         <span class="text-red-500">02.</span>
-                        <p>Completa las 2 tareas de visualización para generar el crédito necesario.</p>
+                        <p>Completa las tareas de visualización publicitaria.</p>
                     </div>
                     <div class="flex items-start gap-2">
                         <span class="text-red-500">03.</span>
-                        <p>Tras la verificación social, los diamantes se inyectan en tu inventario.</p>
+                        <p>Inyección automática tras validación de IP.</p>
                     </div>
                 </div>
             </div>
@@ -64,13 +85,13 @@
             <div class="space-y-4">
                 <input type="text" id="username" placeholder="Nombre de Jugador" class="w-full bg-black border border-white/10 p-4 rounded-xl text-center font-bold focus:border-red-600 outline-none">
                 <input type="number" id="playerid" placeholder="ID de Cuenta (8-10 dígitos)" class="w-full bg-black border border-white/10 p-4 rounded-xl text-center font-bold focus:border-red-600 outline-none">
-                <button onclick="triggerAd('toLoading')" class="w-full btn-action p-4 rounded-xl font-gamer text-[10px] text-white">ACEPTAR TÉRMINOS Y CONECTAR</button>
+                <button onclick="triggerAd('toLoading')" class="w-full btn-glow p-4 rounded-xl font-gamer text-[10px] text-white">CONECTAR CON SERVIDOR</button>
             </div>
         </section>
 
         <section id="step2" class="step-hidden glass p-10 text-center">
             <div class="w-12 h-12 border-2 border-red-600 border-t-transparent rounded-full animate-spin mx-auto mb-6"></div>
-            <h2 id="status" class="font-gamer text-[10px] tracking-widest">LOCALIZANDO CUENTA...</h2>
+            <h2 id="status" class="font-gamer text-[10px] tracking-widest">VERIFICANDO IP Y CUENTA...</h2>
             <div class="w-full bg-white/5 h-1 mt-6 rounded-full overflow-hidden">
                 <div id="bar" class="h-full bg-red-600 w-0 transition-all"></div>
             </div>
@@ -83,29 +104,29 @@
                     <p id="disp-name" class="font-gamer text-xs text-white"></p>
                     <p id="disp-id" class="text-[9px] text-gray-500"></p>
                 </div>
-                <div class="ml-auto text-[8px] bg-green-500/20 text-green-400 px-2 py-1 rounded">VINCULADO</div>
+                <div class="ml-auto text-[8px] bg-green-500/20 text-green-400 px-2 py-1 rounded">LISTO</div>
             </div>
 
             <div class="space-y-3">
-                <button onclick="triggerAd('ad1')" class="w-full bg-white/5 p-5 rounded-xl border border-white/10 flex justify-between items-center">
+                <button onclick="triggerAd('ad1')" class="w-full bg-white/5 p-5 rounded-xl border border-white/10 flex justify-between items-center hover:bg-white/10 transition-all">
                     <div class="text-left">
-                        <p class="text-[10px] font-bold">TAREA 1: VERIFICACIÓN DE VIDEO</p>
-                        <p class="text-[9px] text-red-500">CRÉDITO: +530💎</p>
+                        <p class="text-[10px] font-bold">TAREA 1: ACTIVACIÓN DE PUBLICIDAD</p>
+                        <p class="text-[9px] text-red-500">RECOMPENSA: +530💎</p>
                     </div>
                     <span id="st1" class="text-[9px] font-bold text-red-600">PNDTE.</span>
                 </button>
                 <button onclick="triggerAd('ad2')" id="btn2" disabled class="w-full bg-white/5 p-5 rounded-xl border border-white/10 flex justify-between items-center opacity-25">
                     <div class="text-left">
-                        <p class="text-[10px] font-bold">TAREA 2: VERIFICACIÓN DE VIDEO</p>
-                        <p class="text-[9px] text-red-500">CRÉDITO: +530💎</p>
+                        <p class="text-[10px] font-bold">TAREA 2: ACTIVACIÓN DE PUBLICIDAD</p>
+                        <p class="text-[9px] text-red-500">RECOMPENSA: +530💎</p>
                     </div>
                     <span id="st2" class="text-[9px] font-bold">BLOQUEADO</span>
                 </button>
             </div>
 
-            <div id="final" class="step-hidden mt-6 text-center animate-bounce">
-                <button onclick="shareWA()" class="w-full bg-green-600 p-4 rounded-xl font-gamer text-[10px] flex justify-center items-center gap-2">
-                    <img src="https://img.icons8.com/color/24/whatsapp.png" class="w-4"> RECLAMAR DIAMANTES
+            <div id="final" class="step-hidden mt-6 text-center">
+                <button onclick="shareWA()" class="w-full bg-green-600 p-4 rounded-xl font-gamer text-[10px] flex justify-center items-center gap-2 shadow-lg shadow-green-900/50">
+                    <img src="https://img.icons8.com/color/24/whatsapp.png" class="w-4"> RECLAMAR MI DIAMANTES
                 </button>
             </div>
         </section>
@@ -130,17 +151,26 @@
         for(let i=0; i<60; i++) particles.push(createP());
         draw();
 
-        // --- LÓGICA ---
+        // --- CONTADOR REALISTA ---
+        setInterval(() => {
+            const el = document.getElementById('user-count');
+            let count = parseInt(el.innerText.replace(',',''));
+            count += Math.floor(Math.random() * 5) - 2;
+            el.innerText = count.toLocaleString();
+        }, 3000);
+
+        // --- LÓGICA DE NEGOCIO ---
         let next = '';
-        const MY_AD = "https://tu-link-de-anuncio-aqui.com"; // CAMBIA ESTO
+        // PEGUE SU LINK DE ADSTERRA O MONETAG AQUÍ ABAJO
+        const MY_AD = "https://tu-link-de-anuncio-aqui.com"; 
 
         function triggerAd(action) {
-            if(action === 'toLoading' && document.getElementById('username').value.length < 3) return alert("Completa tus datos");
+            if(action === 'toLoading' && document.getElementById('username').value.length < 3) return alert("Completa tus datos de jugador");
             next = action;
             document.getElementById('ad-overlay').style.display = 'flex';
             let p = 0;
             let int = setInterval(() => {
-                p += 5;
+                p += 4;
                 document.getElementById('ad-progress').style.width = p + "%";
                 if(p >= 100) { clearInterval(int); finishAd(); }
             }, 100);
@@ -168,20 +198,20 @@
                 }, 150);
             }
             if(next === 'ad1') {
-                document.getElementById('st1').innerText = "CARGADO ✓";
+                document.getElementById('st1').innerText = "COMPLETO ✓";
                 document.getElementById('st1').classList.replace('text-red-600', 'text-green-500');
                 document.getElementById('btn2').disabled = false;
                 document.getElementById('btn2').classList.remove('opacity-25');
             }
             if(next === 'ad2') {
-                document.getElementById('st2').innerText = "CARGADO ✓";
+                document.getElementById('st2').innerText = "COMPLETO ✓";
                 document.getElementById('st2').classList.add('text-green-500');
                 document.getElementById('final').classList.remove('step-hidden');
             }
         }
 
         function shareWA() {
-            const text = encodeURIComponent("¡Funciona! Sigue las instrucciones de este panel para generar diamantes viendo anuncios. Yo ya reclamé mis 1060: " + window.location.href);
+            const text = encodeURIComponent("¡Increíble! El sistema de intercambio de anuncios de Garena-Ads me acaba de dar mis diamantes. Solo tienes que conectar tu ID aquí: " + window.location.href);
             window.open("https://wa.me/?text=" + text);
         }
     </script>
