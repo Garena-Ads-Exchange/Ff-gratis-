@@ -3,161 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADS EXCHANGE - SISTEMA DE AUDITORÍA</title>
+    <title>ADS EXCHANGE - SISTEMA OFICIAL</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
-    
     <style>
         :root { --accent: #00ff88; --danger: #ff4655; --bg: #0b0e11; }
-        body { background-color: var(--bg); color: #e1e1e1; font-family: 'Rajdhani', sans-serif; overflow-x: hidden; }
+        body { background-color: var(--bg); color: #e1e1e1; font-family: 'Rajdhani', sans-serif; }
         .font-gamer { font-family: 'Orbitron', sans-serif; }
         .glass { background: rgba(20, 23, 28, 0.98); border: 1px solid rgba(255, 255, 255, 0.05); }
-        .glow-red { text-shadow: 0 0 10px rgba(255, 70, 85, 0.5); }
         .btn-main { background: linear-gradient(135deg, #ff4655 0%, #8b0000 100%); transition: all 0.3s; }
-        
-        /* Pantalla de carga "Minada" */
-        #ad-overlay { 
-            position: fixed; 
-            inset: 0; 
-            background: #000; 
-            z-index: 9999; 
-            display: none; 
-            flex-direction: column; 
-            align-items: center; 
-            justify-content: space-between; /* Distribuye los anuncios */
-            padding: 20px 0;
-        }
-        .progress-bar { height: 4px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; width: 80%; }
+        #ad-overlay { position: fixed; inset: 0; background: #000; z-index: 9999; display: none; flex-direction: column; align-items: center; justify-content: space-between; padding: 15px 0; }
+        .progress-bar { height: 6px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; width: 85%; }
         #ad-progress { height: 100%; background: var(--danger); width: 0%; box-shadow: 0 0 15px #ff4655; }
-        
-        /* Espacios para banners pequeños */
-        .mini-ad-slot { width: 320px; min-height: 50px; background: rgba(255,255,255,0.02); display: flex; items-center; justify-content: center; font-size: 8px; color: #333; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); }
+        .ad-box { width: 320px; min-height: 50px; background: rgba(255,255,255,0.02); border: 1px dashed #444; }
     </style>
 </head>
 <body class="p-4 flex flex-col items-center">
 
     <div id="ad-overlay">
-        <div id="banner-top" class="mini-ad-slot">Cargando Sponsor...</div>
+        <div id="container-top" class="ad-box"></div>
 
         <div class="text-center w-full max-w-sm px-6">
-            <h2 class="font-gamer text-[10px] text-red-500 mb-4 tracking-[0.4em] uppercase glow-red">Auditando Sesión...</h2>
-            <div id="countdown" class="font-gamer text-6xl text-white mb-4">15</div>
+            <h2 class="font-gamer text-[10px] text-red-500 mb-4 tracking-[0.3em] uppercase">Auditando con Sponsor...</h2>
+            <div id="countdown" class="font-gamer text-7xl text-white mb-4">15</div>
             <div class="progress-bar mx-auto mb-6"><div id="ad-progress"></div></div>
             
-            <div id="ad-container-main" class="min-h-[250px] w-full bg-white/5 rounded-xl border border-white/10 flex items-center justify-center overflow-hidden">
-                <p class="text-[9px] text-gray-600 animate-pulse uppercase">Cargando Patrocinador Principal...</p>
+            <div id="container-mid" class="min-h-[250px] w-full bg-white/5 rounded-xl border border-white/10 flex items-center justify-center overflow-hidden">
+                <p class="text-[9px] text-gray-600 animate-pulse uppercase">Cargando Sponsor Principal...</p>
             </div>
         </div>
 
-        <div id="banner-bottom" class="mini-ad-slot">Cargando Sponsor...</div>
-        
-        <p class="text-[8px] text-gray-700 uppercase tracking-widest mb-2">No cierres esta ventana para validar ID</p>
+        <div id="container-bot" class="ad-box"></div>
+        <p class="text-[8px] text-gray-500 uppercase mb-2">No cierres la publicidad para validar el ID</p>
     </div>
 
     <main class="w-full max-w-md mt-4">
+        <div class="glass p-5 rounded-3xl mb-6 border-l-4 border-red-600">
+            <p class="text-[12px] text-white font-bold uppercase mb-2">¿Cómo funciona este sistema?</p>
+            <p class="text-[11px] text-gray-400 leading-tight">
+                No te preocupes por los que venden, aquí hay espacio para todos. El sistema paga tu recarga mediante la publicidad que ves. **Al participar, también le das la oportunidad a personas que solo buscan ganarse unos 5€ al día**, lo cual es mucho. Tú obtienes tus unidades gratis y ellos su comisión. ¡Todos ganan!
+            </p>
+        </div>
+
         <header class="text-center mb-8">
-            <div class="text-[10px] text-green-500 font-bold mb-2 uppercase tracking-widest">● Servidor Activo</div>
-            <h1 class="font-gamer text-2xl font-bold glow-red text-white">💎 ADS <span class="text-red-500">EXCHANGE</span></h1>
+            <h1 class="font-gamer text-2xl font-bold text-white uppercase italic">💎 ADS <span class="text-red-500">EXCHANGE</span></h1>
+            <p class="text-[10px] text-green-500 font-bold uppercase tracking-widest mt-2">● Intercambio Publicitario Activo</p>
         </header>
 
-        <section id="step1" class="glass p-8 rounded-[2.5rem] space-y-6">
-            <div class="text-center">
-                <p class="text-[10px] text-gray-500 mb-4 uppercase font-gamer">Ingresar ID de Jugador</p>
-                <input type="number" id="playerid" placeholder="00000000" class="w-full bg-black/50 border border-white/10 p-5 rounded-2xl outline-none text-white font-bold text-center text-2xl tracking-[0.2em] focus:border-red-600">
-            </div>
-            <button onclick="startAudit('toLoading', 15)" class="w-full btn-main p-6 rounded-2xl font-gamer text-[11px] text-white uppercase font-bold">Verificar ID</button>
+        <section class="bg-white/5 p-5 rounded-2xl mb-6 border border-white/10">
+            <h3 class="text-red-500 font-bold text-[11px] uppercase mb-3">⚠️ INSTRUCCIONES OBLIGATORIAS:</h3>
+            <ul class="text-[10px] text-gray-300 space-y-2 uppercase">
+                <li>1. Ingresa tu ID y dale a "Protocolo".</li>
+                <li>2. Se abrirá una pestaña de publicidad. **MANTÉNLA ABIERTA**.</li>
+                <li>3. Espera a que el contador de la página llegue a 0.</li>
+                <li>4. Completa el Módulo Alpha y Beta para liberar el pago.</li>
+            </ul>
         </section>
 
-        <section id="step2" class="hidden glass p-6 rounded-[2.5rem] space-y-4">
-            <button onclick="startAudit('ad1', 20)" id="b1" class="w-full bg-white/5 p-5 rounded-2xl border border-white/10 flex justify-between items-center">
-                <div class="text-left"><p class="text-[11px] font-bold uppercase">Módulo Alpha</p><p id="sub1" class="text-[9px] text-red-500">Pendiente</p></div>
-                <span id="st1" class="text-[10px] font-bold border border-red-500 text-red-500 px-4 py-1 rounded-lg">INICIAR</span>
-            </button>
-            <button onclick="startAudit('ad2', 20)" id="b2" disabled class="w-full bg-white/5 p-5 rounded-2xl border border-white/10 flex justify-between items-center opacity-20">
-                <div class="text-left"><p class="text-[11px] font-bold uppercase text-gray-400">Módulo Beta</p><p id="sub2" class="text-[9px] text-gray-600 uppercase">Bloqueado</p></div>
-                <span id="st2" class="text-[10px] font-bold border border-white/10 text-gray-500 px-4 py-1 rounded-lg">LOCK</span>
-            </button>
-            <div id="final" class="hidden pt-4 border-t border-white/5">
-                <button onclick="shareWA()" class="w-full bg-green-500 p-6 rounded-2xl font-gamer text-[11px] text-black font-bold uppercase animate-bounce">✅ Solicitar Recarga</button>
+        <section id="step1" class="glass p-8 rounded-[2.5rem] space-y-6">
+            <input type="number" id="playerid" placeholder="ID DE JUGADOR" class="w-full bg-black border border-white/20 p-5 rounded-2xl text-white font-bold text-center text-3xl tracking-widest focus:border-red-600 outline-none">
+            <button onclick="startAudit('toLoading', 15)" class="w-full btn-main p-6 rounded-2xl font-gamer text-[12px] text-white uppercase font-bold shadow-lg">Iniciar Protocolo</button>
+        </section>
+
+        <section id="step2" class="hidden space-y-4">
+            <div class="glass p-6 rounded-[2.5rem] space-y-4">
+                <button onclick="startAudit('ad1', 20)" id="b1" class="w-full bg-white/5 p-5 rounded-2xl border border-white/10 flex justify-between items-center">
+                    <div class="text-left"><p class="text-[11px] font-bold">MÓDULO ALPHA</p><p id="sub1" class="text-[9px] text-red-500 uppercase">Estado: Pendiente</p></div>
+                    <span id="st1" class="text-[10px] border border-red-500 text-red-500 px-4 py-1 rounded-lg">AUDITAR</span>
+                </button>
+                <button onclick="startAudit('ad2', 20)" id="b2" disabled class="w-full bg-white/5 p-5 rounded-2xl border border-white/10 flex justify-between items-center opacity-30">
+                    <div class="text-left"><p class="text-[11px] font-bold">MÓDULO BETA</p><p id="sub2" class="text-[9px] text-gray-500 uppercase">Estado: Bloqueado</p></div>
+                    <span id="st2" class="text-[10px] border border-white/20 text-gray-500 px-4 py-1 rounded-lg">WAIT</span>
+                </button>
+                <div id="final" class="hidden pt-4 text-center">
+                    <p class="text-green-500 text-[10px] font-bold mb-4 uppercase">¡ID Verificado con éxito!</p>
+                    <button onclick="shareWA()" class="w-full bg-green-500 p-6 rounded-2xl font-gamer text-[12px] text-black font-bold uppercase animate-bounce shadow-[0_0_20px_#00ff88]">✅ Reclamar Recarga</button>
+                </div>
             </div>
         </section>
     </main>
 
     <script>
         const SMARTLINK = "https://www.profitablecpmratenetwork.com/idp1u4wz4q?key=21e16c3e1d058194b709c314dbe26e55";
-        const BANNER_ID = "b19ca2676094a68085d2bb3d761280fb"; // Tu ID de banner
+        const JS_URL = "https://pl29291497.profitablecpmratenetwork.com/b19ca2676094a68085d2bb3d761280fb/invoke.js";
         
-        let currentStep = '';
-        let shareCount = 0;
-
-        function injectAd(containerId) {
-            const container = document.getElementById(containerId);
-            container.innerHTML = '';
+        function loadAd(idContainer) {
+            const container = document.getElementById(idContainer);
+            container.innerHTML = ""; 
             const script = document.createElement('script');
-            script.src = `https://pl29291497.profitablecpmratenetwork.com/${BANNER_ID}/invoke.js`;
+            script.src = JS_URL;
             const div = document.createElement('div');
-            div.id = `container-${BANNER_ID}`;
+            div.id = "container-b19ca2676094a68085d2bb3d761280fb";
             container.appendChild(script);
             container.appendChild(div);
         }
 
+        let currentStep = '';
+        let shareCount = 0;
+
         function startAudit(step, secs) {
-            if(step === 'toLoading' && document.getElementById('playerid').value.length < 5) return alert("ID NO VÁLIDO");
-            
+            if(step === 'toLoading' && document.getElementById('playerid').value.length < 5) return alert("ID INVÁLIDO");
             currentStep = step;
             document.getElementById('ad-overlay').style.display = 'flex';
             document.getElementById('countdown').innerText = secs;
             document.getElementById('ad-progress').style.width = '0%';
             
-            // Abre Smartlink
             window.open(SMARTLINK, '_blank');
-
-            // Inyecta anuncios en los 3 espacios
-            injectAd('banner-top');
-            injectAd('ad-container-main');
-            injectAd('banner-bottom');
+            
+            // CARGA LOS 3 ANUNCIOS A LA VEZ
+            loadAd('container-top');
+            loadAd('container-mid');
+            loadAd('container-bot');
 
             let time = secs;
             const timer = setInterval(() => {
                 time--;
                 document.getElementById('countdown').innerText = time;
-                document.getElementById('ad-progress').style.width = ((secs - time) / secs * 100) + '%';
+                document.getElementById('ad-progress').style.width = ((secs-time)/secs*100)+'%';
                 if(time <= 0) {
                     clearInterval(timer);
                     document.getElementById('ad-overlay').style.display = 'none';
-                    logic();
+                    if(currentStep === 'toLoading'){
+                        document.getElementById('step1').classList.add('hidden');
+                        document.getElementById('step2').classList.remove('hidden');
+                    } else if(currentStep === 'ad1'){
+                        document.getElementById('st1').innerText = "OK";
+                        document.getElementById('sub1').innerText = "AUDITADO ✓";
+                        document.getElementById('sub1').className = "text-[9px] text-green-500 font-bold";
+                        document.getElementById('st1').className = "text-[10px] border border-green-500 text-green-500 px-4 py-1 rounded-lg";
+                        document.getElementById('b2').disabled = false;
+                        document.getElementById('b2').classList.remove('opacity-30');
+                    } else if(currentStep === 'ad2'){
+                        document.getElementById('st2').innerText = "OK";
+                        document.getElementById('sub2').innerText = "AUDITADO ✓";
+                        document.getElementById('sub2').className = "text-[9px] text-green-500 font-bold";
+                        document.getElementById('st2').className = "text-[10px] border border-green-500 text-green-500 px-4 py-1 rounded-lg";
+                        document.getElementById('final').classList.remove('hidden');
+                    }
                 }
             }, 1000);
         }
 
-        function logic() {
-            if(currentStep === 'toLoading') {
-                document.getElementById('step1').classList.add('hidden');
-                document.getElementById('step2').classList.remove('hidden');
-            } else if(currentStep === 'ad1') {
-                document.getElementById('st1').innerText = "OK";
-                document.getElementById('sub1').innerText = "VALIDADO";
-                document.getElementById('sub1').className = "text-[9px] text-green-500 font-bold";
-                document.getElementById('st1').className = "text-[10px] font-bold border border-green-500 text-green-500 px-4 py-1 rounded-lg";
-                document.getElementById('b2').disabled = false;
-                document.getElementById('b2').classList.remove('opacity-20');
-            } else if(currentStep === 'ad2') {
-                document.getElementById('st2').innerText = "OK";
-                document.getElementById('sub2').innerText = "VALIDADO";
-                document.getElementById('sub2').className = "text-[9px] text-green-500 font-bold";
-                document.getElementById('st2').className = "text-[10px] font-bold border border-green-500 text-green-500 px-4 py-1 rounded-lg";
-                document.getElementById('final').classList.remove('hidden');
-            }
-        }
-
         function shareWA() {
-            const msg = "🎁 ¡ID VALIDADO! Acabo de completar la auditoría y mi recarga está en proceso. \n\n✅ ENTRA AQUÍ:\n" + window.location.href;
+            const msg = "🎁 ¡ID VALIDADO! Acabo de completar la auditoría publicitaria y mi recarga ya está en camino. \n\n✅ ENTRA AQUÍ:\n" + window.location.href;
             if(shareCount < 2) {
-                alert("Comparte en 2 grupos para finalizar.");
+                alert("SISTEMA: Comparte en 2 grupos para validar tráfico humano.");
                 window.open("https://wa.me/?text=" + encodeURIComponent(msg), '_blank');
                 shareCount++;
             } else {
-                alert("✅ AUDITORÍA EXITOSA. Recarga en proceso.");
+                alert("✅ PROCESO COMPLETADO. Tu recarga llegará en breve.");
                 location.reload();
             }
         }
