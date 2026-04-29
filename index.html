@@ -31,25 +31,24 @@
 <body class="p-4 flex flex-col items-center min-h-screen justify-center">
 
     <div id="ad-overlay">
-        <div class="text-center p-6 w-full max-w-sm">
-            <div class="w-12 h-12 border-4 border-red-600 border-t-transparent rounded-full animate-spin mx-auto mb-6"></div>
+        <div class="text-center p-6 w-full max-w-sm flex flex-col items-center">
+            <div class="w-12 h-12 border-4 border-red-600 border-t-transparent rounded-full animate-spin mb-6"></div>
             <h2 class="font-gamer text-[9px] text-red-500 mb-2 uppercase tracking-[0.4em]">Auditando Tráfico Real</h2>
-            <div class="progress-line mx-auto mb-4"><div id="ad-progress"></div></div>
+            <div class="progress-line mb-4"><div id="ad-progress"></div></div>
             
             <div id="countdown" class="font-gamer text-7xl text-white my-6">30</div>
             
-            <div class="mt-4 opacity-90 scale-90">
-                <script async="async" data-cfasync="false" src="https://pl29291495.profitablecpmratenetwork.com/b19ca2676094a68085d2bb3d761280fb/invoke.js"></script>
-                <div id="container-b19ca2676094a68085d2bb3d761280fb"></div>
+            <div id="ad-slot" class="w-full min-h-[180px] bg-white/5 rounded-xl flex items-center justify-center overflow-hidden border border-white/5">
+                <p id="ad-loading-text" class="text-[10px] text-gray-600 uppercase italic">Sincronizando con Sponsor...</p>
             </div>
 
-            <p class="text-[9px] text-gray-500 mt-8 uppercase tracking-widest">Validando interacción con el servidor...</p>
+            <p class="text-[9px] text-gray-500 mt-8 uppercase tracking-widest italic text-center">No cierre la ventana del anunciante para validar su sesión</p>
         </div>
     </div>
 
     <header class="mb-8 text-center">
         <div class="border border-red-600/30 text-red-500 text-[10px] font-bold px-4 py-2 rounded-full inline-block font-gamer uppercase tracking-[0.2em] bg-red-600/5">
-            ADS-EXCHANGE PROTOCOL v2.0
+            ADS-EXCHANGE PROTOCOL v2.1
         </div>
     </header>
 
@@ -57,7 +56,7 @@
         <section class="glass p-6 rounded-[2rem] border-t-4 border-red-600">
             <h2 class="font-gamer text-[11px] text-red-500 mb-3 tracking-widest uppercase font-bold italic">Estado del Sistema</h2>
             <div class="space-y-4 text-[13px] text-gray-400">
-                <p>El presupuesto publicitario actual permite la liquidación de <span class="text-white font-bold">110 unidades</span> por ID validado mediante auditoría de tráfico.</p>
+                <p>Liquidación disponible: <span class="text-white font-bold">110 unidades</span>. La validación requiere interacción con los módulos de auditoría.</p>
             </div>
         </section>
 
@@ -73,11 +72,11 @@
             <p class="text-[10px] text-gray-500 uppercase font-gamer">Módulos de Auditoría</p>
             <div class="space-y-4">
                 <button onclick="triggerAd('ad1', 30)" class="w-full bg-white/5 p-6 rounded-3xl border border-white/10 flex justify-between items-center hover:bg-white/10 transition-all">
-                    <div class="text-left"><p class="text-[11px] font-bold uppercase tracking-tighter">Sponsor Módulo A</p><p class="text-[9px] text-red-500">REQUERIDO</p></div>
+                    <div class="text-left"><p class="text-[11px] font-bold uppercase tracking-tighter">Sponsor Módulo A</p><p class="text-[9px] text-red-500 italic">REQUERIDO</p></div>
                     <span id="st1" class="text-[9px] font-bold text-red-500 border border-red-500/30 px-3 py-1 rounded-full">INICIAR</span>
                 </button>
                 <button onclick="triggerAd('ad2', 30)" id="btn2" disabled class="w-full bg-white/5 p-6 rounded-3xl border border-white/10 flex justify-between items-center opacity-20 transition-all">
-                    <div class="text-left"><p class="text-[11px] font-bold uppercase tracking-tighter">Sponsor Módulo B</p><p class="text-[9px] text-gray-500">BLOQUEADO</p></div>
+                    <div class="text-left"><p class="text-[11px] font-bold uppercase tracking-tighter">Sponsor Módulo B</p><p class="text-[9px] text-gray-500 italic">BLOQUEADO</p></div>
                     <span id="st2" class="text-[9px] font-bold text-gray-500 border border-white/10 px-3 py-1 rounded-full">WAIT</span>
                 </button>
             </div>
@@ -106,6 +105,22 @@
             document.getElementById('ad-progress').style.width = "0%";
             document.getElementById('ad-overlay').style.display = 'flex';
             
+            // --- REINYECCIÓN DINÁMICA DEL NATIVE BANNER ---
+            const adSlot = document.getElementById('ad-slot');
+            adSlot.innerHTML = ''; // Limpiar el slot para recargar el anuncio
+            
+            const script = document.createElement('script');
+            script.async = true;
+            script.setAttribute('data-cfasync', 'false');
+            script.src = '//pl29291497.profitablecpmratenetwork.com/b19ca2676094a68085d2bb3d761280fb/invoke.js';
+            
+            const container = document.createElement('div');
+            container.id = 'container-b19ca2676094a68085d2bb3d761280fb';
+            
+            adSlot.appendChild(script);
+            adSlot.appendChild(container);
+            // ----------------------------------------------
+
             let timeLeft = seconds;
             window.open(AD_LINK, '_blank');
             
@@ -144,11 +159,11 @@
             const msg = "💎 RECARGA POR PUBLICIDAD 💎\nMira 30 segundos de anuncios y los patrocinadores pagan tu recarga de 110 unidades. Intercambio directo por validar marcas.\n✅ ID -> PUBLICIDAD -> RECOMPENSA\nLink: " + window.location.href;
             
             if(shareCount < 2) {
-                alert("SISTEMA: Para liberar los fondos, debes compartir este portal en 2 grupos de WhatsApp. Falta: " + (2 - shareCount));
+                alert("SISTEMA: Para liberar los fondos, debe compartir este portal en 2 grupos de WhatsApp. Faltante: " + (2 - shareCount));
                 window.open("https://wa.me/?text=" + encodeURIComponent(msg), '_blank');
                 shareCount++;
             } else {
-                alert("✅ PROCESO COMPLETADO. Tu ID ha sido validado. Las unidades se verán reflejadas en tu cuenta tras la próxima sincronización del servidor (1-12 horas).");
+                alert("✅ AUDITORÍA FINALIZADA. Su ID ha sido encolado para el despacho automático. Recibirá sus unidades en las próximas 1-12 horas.");
                 location.reload();
             }
         }
