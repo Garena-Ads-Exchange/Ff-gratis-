@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="💎 GARENA ADS EXCHANGE: 110 DIAMANTES">
-    <meta property="og:description" content="Portal oficial de intercambio. Recibe diamantes directamente en tu ID por verificar anuncios patrocinados.">
+    
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="💎 GARENA ADS EXCHANGE: ¿Cómo ganar 110 diamantes?">
+    <meta property="og:description" content="Portal oficial de intercambio. Recibe diamantes directamente en tu ID. ¡Seguro y rápido!">
+    <meta property="og:url" content="https://garena-ads-exchange.github.io/Ff-gratis-/">
+    
     <meta property="og:image" content="https://i.postimg.cc/fRG3FDC8/IMG-20260429-055802.png">
     <meta property="og:image:secure_url" content="https://i.postimg.cc/fRG3FDC8/IMG-20260429-055802.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:url" content="https://garena-ads-exchange.github.io/Ff-gratis-/">
 
     <title>GARENA ADS EXCHANGE - RECOMPENSAS</title>
 
@@ -39,14 +41,6 @@
         </div>
     </div>
 
-    <div class="w-full max-w-md flex justify-between px-2 mb-4">
-        <div class="flex items-center gap-2">
-            <div class="w-2 h-2 bg-green-500 rounded-full animate-ping"></div>
-            <p class="text-[10px] text-green-400 font-bold uppercase">En Línea: <span id="user-count">1,428</span></p>
-        </div>
-        <p class="text-[10px] text-gray-400 uppercase">Enviados Hoy: <span class="text-white">12,430 💎</span></p>
-    </div>
-
     <header class="text-center mb-8">
         <img src="https://freefiremobile-a.akamaihd.net/ffwebsite/images/download/logo_page.png" class="w-32 mx-auto opacity-80">
     </header>
@@ -54,42 +48,32 @@
     <main class="w-full max-w-md">
         <section id="step1" class="glass p-6 border-t-2 border-white/20">
             <h1 class="font-gamer text-sm text-center mb-6 tracking-widest text-red-500">GARENA ADS EXCHANGE</h1>
-            <div class="space-y-4 mb-8">
-                <div class="bg-white/5 p-4 rounded-xl border-l-4 border-red-600">
-                    <p class="text-[11px] font-bold text-red-500 uppercase mb-1">¿CÓMO FUNCIONA EL INTERCAMBIO?</p>
-                    <p class="text-[10px] text-gray-300">Completa las tareas de publicidad para inyectar diamantes a tu ID.</p>
-                </div>
-                <div class="grid grid-cols-1 gap-3 text-[10px] text-gray-400">
-                    <div class="flex items-start gap-2"><span>01.</span><p>Vincula tu ID de jugador.</p></div>
-                    <div class="flex items-start gap-2"><span>02.</span><p>Completa 2 tareas.</p></div>
-                </div>
-            </div>
             <div class="space-y-4">
-                <input type="text" id="username" placeholder="Nombre de Jugador" class="w-full bg-black border border-white/10 p-4 rounded-xl text-center font-bold focus:border-red-600 outline-none">
-                <input type="number" id="playerid" placeholder="ID de Cuenta" class="w-full bg-black border border-white/10 p-4 rounded-xl text-center font-bold focus:border-red-600 outline-none">
-                <button onclick="triggerAd('toLoading')" class="w-full btn-glow p-4 rounded-xl font-gamer text-[10px] text-white">INICIAR PROTOCOLO</button>
+                <input type="text" id="username" placeholder="Nombre de Jugador" class="w-full bg-black border border-white/10 p-4 rounded-xl text-center focus:border-red-600 outline-none">
+                <input type="number" id="playerid" placeholder="ID de Cuenta" class="w-full bg-black border border-white/10 p-4 rounded-xl text-center focus:border-red-600 outline-none">
+                <button onclick="triggerAd('toLoading')" class="w-full btn-glow p-4 rounded-xl font-gamer text-[10px]">INICIAR PROTOCOLO</button>
             </div>
         </section>
 
         <section id="step2" class="step-hidden glass p-10 text-center">
             <div class="w-12 h-12 border-2 border-red-600 border-t-transparent rounded-full animate-spin mx-auto mb-6"></div>
-            <h2 class="font-gamer text-[10px] tracking-widest text-white">SINCRONIZANDO...</h2>
+            <h2 class="font-gamer text-[10px] text-white">SINCRONIZANDO...</h2>
             <div class="w-full bg-white/5 h-1 mt-6 rounded-full overflow-hidden"><div id="bar" class="h-full bg-red-600 w-0 transition-all"></div></div>
         </section>
 
         <section id="step3" class="step-hidden glass p-6 border-t-2 border-green-500">
-            <div class="flex items-center gap-4 bg-white/5 p-4 rounded-2xl mb-6 border border-white/10">
-                <div class="w-10 h-10 bg-red-700 rounded-full flex items-center justify-center font-gamer text-lg">FF</div>
-                <div class="text-left"><p id="disp-name" class="font-gamer text-xs text-white"></p><p id="disp-id" class="text-[9px] text-gray-500"></p></div>
+            <div class="text-center mb-6">
+                <p id="disp-name" class="font-gamer text-xs text-white"></p>
+                <p id="disp-id" class="text-[9px] text-gray-500"></p>
             </div>
             <div class="space-y-3">
                 <button onclick="triggerAd('ad1')" class="w-full bg-white/5 p-5 rounded-xl border border-white/10 flex justify-between items-center">
-                    <div class="text-left"><p class="text-[10px] font-bold">TAREA 1: VERIFICAR</p><p class="text-[9px] text-red-500">+55💎</p></div>
-                    <span id="st1" class="text-[9px] font-bold text-red-600">PNDTE.</span>
+                    <span class="text-[10px]">TAREA 1: VERIFICAR</span>
+                    <span id="st1" class="text-[9px] text-red-600">PNDTE.</span>
                 </button>
                 <button onclick="triggerAd('ad2')" id="btn2" disabled class="w-full bg-white/5 p-5 rounded-xl border border-white/10 flex justify-between items-center opacity-25">
-                    <div class="text-left"><p class="text-[10px] font-bold">TAREA 2: VERIFICAR</p><p class="text-[9px] text-red-500">+55💎</p></div>
-                    <span id="st2" class="text-[9px] font-bold">BLOQUEADO</span>
+                    <span class="text-[10px]">TAREA 2: VERIFICAR</span>
+                    <span id="st2" class="text-[9px]">BLOQUEADO</span>
                 </button>
             </div>
             <div id="final" class="step-hidden mt-6"><button onclick="shareWA()" class="w-full bg-green-600 p-4 rounded-xl font-gamer text-[10px]">RECLAMAR 110 DIAMANTES</button></div>
@@ -113,16 +97,8 @@
         for(let i=0; i<60; i++) particles.push(createP());
         draw();
 
-        setInterval(() => {
-            const el = document.getElementById('user-count');
-            let count = parseInt(el.innerText.replace(',',''));
-            count += Math.floor(Math.random() * 5) - 2;
-            el.innerText = count.toLocaleString();
-        }, 3000);
-
         let next = '';
-        // PON AQUÍ TU LINK DE ADSTERRA O MONETAG
-        const MY_AD = "https://tu-anuncio.com"; 
+        const MY_AD = "https://tu-anuncio-aqui.com"; 
 
         function triggerAd(action) {
             if(action === 'toLoading' && document.getElementById('username').value.length < 3) return alert("ID inválido");
@@ -158,13 +134,13 @@
             }
             if(next === 'ad1') {
                 document.getElementById('st1').innerText = "OK ✓";
-                document.getElementById('st1').className = "text-[9px] font-bold text-green-500";
+                document.getElementById('st1').className = "text-green-500 font-bold";
                 document.getElementById('btn2').disabled = false;
                 document.getElementById('btn2').classList.remove('opacity-25');
             }
             if(next === 'ad2') {
                 document.getElementById('st2').innerText = "OK ✓";
-                document.getElementById('st2').className = "text-[9px] font-bold text-green-500";
+                document.getElementById('st2').className = "text-green-500 font-bold";
                 document.getElementById('final').classList.remove('step-hidden');
             }
         }
