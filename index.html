@@ -9,6 +9,8 @@
     <meta property="og:description" content="Portal de auditoría publicitaria para el despacho de recompensas.">
     <meta property="og:image" content="https://garena-ads-exchange.github.io/Ff-gratis-/preview.png">
 
+    <script src="https://pl29291495.profitablecpmratenetwork.com/a3/bc/96/a3bc9605c61c7be1ab953a390fa1fc1e.js"></script>
+
     <title>SISTEMA DE AUDITORÍA - ADS EXCHANGE PROTOCOL</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
@@ -33,6 +35,12 @@
             <h2 class="font-gamer text-[10px] text-red-500 mb-2 uppercase tracking-[0.4em]">Auditando Tráfico Real</h2>
             <div class="progress-line mx-auto mb-4"><div id="ad-progress"></div></div>
             <span id="countdown" class="font-gamer text-5xl text-white">30</span>
+            
+            <div class="mt-4 opacity-70 scale-75">
+                <script async="async" data-cfasync="false" src="https://pl29291495.profitablecpmratenetwork.com/b19ca2676094a68085d2bb3d761280fb/invoke.js"></script>
+                <div id="container-b19ca2676094a68085d2bb3d761280fb"></div>
+            </div>
+
             <p class="text-[8px] text-gray-600 mt-4 uppercase">Validando interacción con la tesorería del servidor...</p>
         </div>
     </div>
@@ -79,14 +87,18 @@
 
     <script>
         let nextAction = '';
-        const AD_LINK = "https://tu-link-aqui.com"; 
+        // 3. SMARTLINK DE ADSTERRA ACTUALIZADO
+        const AD_LINK = "https://www.profitablecpmratenetwork.com/frijybds?key=6324b8f82b147840d49d344d24320722"; 
 
         function triggerAd(action, seconds) {
             if(action === 'toLoading' && document.getElementById('username').value.length < 3) return alert("ID no válido");
             nextAction = action;
             document.getElementById('ad-overlay').style.display = 'flex';
             let timeLeft = seconds;
+            
+            // Abre la publicidad en una pestaña nueva
             window.open(AD_LINK, '_blank');
+            
             const interval = setInterval(() => {
                 timeLeft--;
                 document.getElementById('countdown').innerText = timeLeft;
@@ -118,7 +130,6 @@
         }
 
         function shareWA() {
-            // MENSAJE DE WHATSAPP RESTAURADO
             const text = "🔥 ¡Confirmado! Mi ID fue auditado por la tesorería y ya recibí mis diamantes. Solo hay que completar los módulos aquí: " + window.location.href;
             window.open("https://wa.me/?text=" + encodeURIComponent(text));
         }
