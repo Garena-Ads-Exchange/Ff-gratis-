@@ -3,112 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SISTEMA DE AUDITORÍA - ADS EXCHANGE</title>
+    <title>ADS EXCHANGE - RECARGA OFICIAL</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
     
     <style>
-        :root { --accent: #ff4655; --bg: #060606; }
-        body { background-color: var(--bg); color: white; font-family: 'Rajdhani', sans-serif; }
+        :root { --accent: #00ff88; --danger: #ff4655; --bg: #0b0e11; }
+        body { background-color: var(--bg); color: #e1e1e1; font-family: 'Rajdhani', sans-serif; overflow-x: hidden; }
         .font-gamer { font-family: 'Orbitron', sans-serif; }
-        .glass { background: rgba(15, 15, 15, 0.98); border: 1px solid rgba(255, 70, 85, 0.2); }
-        .btn-premium { background: linear-gradient(135deg, #ff4655 0%, #b91c1c 100%); box-shadow: 0 0 15px rgba(255, 70, 85, 0.3); }
-        #ad-overlay { position: fixed; inset: 0; background: #000; z-index: 9999; display: none; flex-direction: column; align-items: center; justify-content: center; }
-        .progress-line { width: 80%; height: 4px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; }
-        #ad-progress { width: 0%; height: 100%; background: var(--accent); }
+        .glass { background: rgba(20, 23, 28, 0.95); border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .glow-red { text-shadow: 0 0 10px rgba(255, 70, 85, 0.5); }
+        .glow-green { text-shadow: 0 0 10px rgba(0, 255, 136, 0.5); }
+        .btn-main { background: linear-gradient(135deg, #ff4655 0%, #8b0000 100%); transition: all 0.3s; }
+        .btn-main:active { transform: scale(0.95); }
+        
+        #ad-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 9999; display: none; flex-direction: column; align-items: center; justify-content: center; backdrop-filter: blur(10px); }
+        .scanline { width: 100%; height: 2px; background: rgba(255, 70, 85, 0.1); position: absolute; animation: scan 3s linear infinite; }
+        @keyframes scan { from { top: 0; } to { top: 100%; } }
     </style>
 </head>
-<body class="p-4 flex flex-col items-center min-h-screen justify-center">
+<body class="p-4 flex flex-col items-center">
 
     <div id="ad-overlay">
-        <div class="text-center w-full max-w-sm px-4">
-            <h2 class="font-gamer text-[10px] text-red-500 mb-4 tracking-[0.3em] uppercase">Auditando Sesión...</h2>
+        <div class="scanline"></div>
+        <div class="text-center w-full max-w-sm px-6">
+            <div class="mb-2 flex justify-center">
+                <span class="animate-ping absolute h-8 w-8 rounded-full bg-red-500 opacity-20"></span>
+                <img src="https://img.icons8.com/neon/96/shield.png" class="w-12 h-12 relative" alt="shield">
+            </div>
+            <h2 class="font-gamer text-xs text-red-500 mb-6 tracking-[0.4em] uppercase glow-red">Validando con Patrocinador...</h2>
             
-            <div id="countdown" class="font-gamer text-7xl text-white mb-4">30</div>
+            <div id="countdown" class="font-gamer text-8xl text-white mb-6">30</div>
             
-            <div class="progress-line mx-auto mb-8"><div id="ad-progress"></div></div>
-            
-            <div id="ad-container" class="min-h-[200px] w-full bg-white/5 rounded-xl border border-white/10 flex items-center justify-center overflow-hidden">
-                <p id="ad-status" class="text-[10px] text-gray-500 animate-pulse uppercase">Cargando Sponsor Oficial...</p>
+            <div class="w-full bg-white/5 h-1 rounded-full overflow-hidden mb-8">
+                <div id="ad-progress" class="h-full bg-red-600 shadow-[0_0_15px_#ff4655]" style="width: 0%"></div>
             </div>
             
-            <p class="text-[9px] text-gray-600 mt-6 uppercase tracking-widest">No cierres esta ventana para validar el ID</p>
+            <div id="ad-container" class="min-h-[250px] w-full bg-black/40 rounded-2xl border border-white/10 flex items-center justify-center p-2">
+                <p class="text-[10px] text-gray-500 animate-pulse tracking-tighter">CONECTANDO CON EL SERVIDOR DE ANUNCIOS...</p>
+            </div>
         </div>
     </div>
 
-    <main class="w-full max-w-md space-y-6">
-        <header class="text-center mb-4">
-            <div class="border border-red-600/30 text-red-500 text-[10px] font-bold px-4 py-2 rounded-full inline-block font-gamer bg-red-600/5">
-                ADS-EXCHANGE PROTOCOL v2.5
+    <main class="w-full max-w-md mt-6">
+        
+        <div class="flex justify-between items-center mb-6 px-2">
+            <div class="flex items-center gap-2">
+                <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                <span class="text-[10px] font-bold tracking-widest text-green-500 uppercase">Servidor: Online</span>
             </div>
+            <div class="text-[10px] text-gray-500 font-gamer uppercase tracking-tighter">Users: 4,129</div>
+        </div>
+
+        <header class="text-center mb-8">
+            <h1 class="font-gamer text-2xl font-bold italic tracking-tighter glow-red text-white">💎 ADS <span class="text-red-500">EXCHANGE</span></h1>
+            <p class="text-[11px] text-gray-400 mt-2 uppercase tracking-widest">Recarga de 110 Diamantes por Publicidad</p>
         </header>
 
-        <section id="step1" class="glass p-8 rounded-[2rem] space-y-6">
-            <div class="text-center">
-                <p class="text-[10px] text-gray-500 mb-2 uppercase font-gamer">Ingresar ID de Jugador</p>
-                <input type="number" id="playerid" placeholder="00000000" class="w-full bg-black border border-white/10 p-5 rounded-2xl outline-none text-white font-bold text-center text-2xl tracking-widest focus:border-red-600">
+        <section id="step1" class="glass p-8 rounded-[2.5rem] relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-4 opacity-10">
+                <img src="https://img.icons8.com/neon/96/diamond.png" width="80">
             </div>
-            <button onclick="startAudit('toLoading', 15)" class="w-full btn-premium p-5 rounded-2xl font-gamer text-[11px] uppercase tracking-wider">Verificar ID</button>
+            
+            <div class="space-y-6">
+                <div>
+                    <label class="text-[10px] text-red-500 font-bold uppercase mb-4 block tracking-widest ml-1">Player ID</label>
+                    <input type="number" id="playerid" placeholder="ID de Jugador" class="w-full bg-black/50 border border-white/10 p-5 rounded-2xl outline-none text-white font-bold text-center text-3xl tracking-[0.3em] focus:border-red-600 transition-all shadow-inner">
+                </div>
+                
+                <div class="bg-red-500/5 border border-red-500/20 p-4 rounded-xl">
+                    <p class="text-[11px] text-gray-300 leading-relaxed italic">
+                        "Al verificar tu ID, el sistema asignará una tarea de patrocinio de 30 segundos. Al finalizar, la recarga se procesará automáticamente."
+                    </p>
+                </div>
+
+                <button onclick="startAudit('toLoading', 15)" class="w-full btn-main p-6 rounded-2xl font-gamer text-[12px] text-white uppercase tracking-widest font-bold shadow-lg shadow-red-900/20">
+                    Verificar y Vincular
+                </button>
+            </div>
         </section>
 
-        <section id="step2" class="hidden glass p-6 rounded-[2rem] space-y-4 text-center">
-            <p class="text-[10px] text-gray-500 uppercase font-gamer mb-2">Módulos de Sponsor</p>
-            <button onclick="startAudit('ad1', 30)" id="b1" class="w-full bg-white/5 p-6 rounded-3xl border border-white/10 flex justify-between items-center">
-                <div class="text-left"><p class="text-[11px] font-bold">MÓDULO ALPHA</p><p class="text-[9px] text-red-500">PENDIENTE</p></div>
-                <span id="st1" class="text-[9px] font-bold border border-red-500 text-red-500 px-3 py-1 rounded-full">INICIAR</span>
-            </button>
-            <button onclick="startAudit('ad2', 30)" id="b2" disabled class="w-full bg-white/5 p-6 rounded-3xl border border-white/10 flex justify-between items-center opacity-30">
-                <div class="text-left"><p class="text-[11px] font-bold">MÓDULO BETA</p><p class="text-[9px] text-gray-500">BLOQUEADO</p></div>
-                <span id="st2" class="text-[9px] font-bold border border-white/10 text-gray-500 px-3 py-1 rounded-full">WAIT</span>
-            </button>
+        <section id="step2" class="hidden space-y-4">
+            <div class="glass p-6 rounded-[2.5rem]">
+                <h3 class="text-center font-gamer text-[10px] mb-6 tracking-widest text-gray-400">Panel de Auditoría</h3>
+                
+                <div class="space-y-3">
+                    <button onclick="startAudit('ad1', 30)" id="b1" class="w-full bg-white/5 p-5 rounded-2xl border border-white/10 flex justify-between items-center group">
+                        <div class="text-left leading-none">
+                            <p class="text-[12px] font-bold group-hover:text-red-500 transition-colors tracking-wide">MÓDULO DE VALIDACIÓN 01</p>
+                            <p id="sub1" class="text-[9px] text-red-500 mt-1 uppercase font-bold">Pendiente</p>
+                        </div>
+                        <span id="st1" class="text-[10px] font-bold bg-red-600/20 text-red-500 px-4 py-2 rounded-lg border border-red-600/40">INICIAR</span>
+                    </button>
 
-            <div id="final" class="hidden mt-6 pt-6 border-t border-white/5">
-                <button onclick="shareWA()" class="w-full bg-green-600 p-6 rounded-2xl font-gamer text-[11px] uppercase font-bold">Compartir y Recibir</button>
+                    <button onclick="startAudit('ad2', 30)" id="b2" disabled class="w-full bg-white/5 p-5 rounded-2xl border border-white/10 flex justify-between items-center opacity-20">
+                        <div class="text-left leading-none">
+                            <p class="text-[12px] font-bold tracking-wide text-gray-500">MÓDULO DE VALIDACIÓN 02</p>
+                            <p id="sub2" class="text-[9px] text-gray-600 mt-1 uppercase">Bloqueado</p>
+                        </div>
+                        <span id="st2" class="text-[10px] font-bold bg-white/10 text-gray-500 px-4 py-2 rounded-lg">LOCK</span>
+                    </button>
+                </div>
+
+                <div id="final" class="hidden mt-6 animate-bounce">
+                    <button onclick="shareWA()" class="w-full bg-green-500 p-6 rounded-2xl font-gamer text-[12px] text-black font-bold uppercase shadow-[0_0_20px_#00ff88]">
+                        ✅ Solicitar Recarga Ahora
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-black/40 p-4 rounded-xl border border-white/5 overflow-hidden">
+                <div class="flex items-center gap-4 animate-pulse">
+                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                    <p class="text-[9px] text-gray-500 uppercase tracking-widest font-bold">Última recarga: ID 8274*** (HACE 2m)</p>
+                </div>
             </div>
         </section>
+
     </main>
 
     <script>
+        // Misma lógica pero con IDs de elementos actualizados si fuese necesario
         let currentStep = '';
         let shareCount = 0;
-        const SMARTLINK = "https://www.profitablecpmratenetwork.com/frijybds?key=6324b8f82b147840d49d344d24320722";
+        const SMARTLINK = "TU_LINK_DE_ADSTERRA_AQUÍ";
 
         function startAudit(step, secs) {
-            if(step === 'toLoading' && document.getElementById('playerid').value.length < 5) return alert("ID INVÁLIDO");
+            if(step === 'toLoading' && document.getElementById('playerid').value.length < 5) return alert("INTRODUCE UN ID VÁLIDO");
             
             currentStep = step;
-            const overlay = document.getElementById('ad-overlay');
-            const counter = document.getElementById('countdown');
-            const progress = document.getElementById('ad-progress');
-            const adContainer = document.getElementById('ad-container');
+            document.getElementById('ad-overlay').style.display = 'flex';
+            document.getElementById('countdown').innerText = secs;
             
-            // 1. Mostrar el overlay inmediatamente
-            overlay.style.display = 'flex';
-            counter.innerText = secs;
-            progress.style.width = '0%';
-            
-            // 2. Abrir publicidad en otra pestaña
             window.open(SMARTLINK, '_blank');
 
-            // 3. Inyectar el banner de Adsterra (Sponsor)
-            adContainer.innerHTML = ''; 
-            const s = document.createElement('script');
-            s.src = 'https://pl29291497.profitablecpmratenetwork.com/b19ca2676094a68085d2bb3d761280fb/invoke.js';
-            const c = document.createElement('div');
-            c.id = 'container-b19ca2676094a68085d2bb3d761280fb';
-            adContainer.appendChild(s);
-            adContainer.appendChild(c);
-
-            // 4. Temporizador forzado (Independiente de la carga)
+            // Simulación de carga
             let time = secs;
             const timer = setInterval(() => {
                 time--;
-                counter.innerText = time;
-                progress.style.width = ((secs - time) / secs * 100) + '%';
+                document.getElementById('countdown').innerText = time;
+                document.getElementById('ad-progress').style.width = ((secs - time) / secs * 100) + '%';
                 
                 if(time <= 0) {
                     clearInterval(timer);
-                    overlay.style.display = 'none';
+                    document.getElementById('ad-overlay').style.display = 'none';
                     logic();
                 }
             }, 1000);
@@ -119,25 +157,29 @@
                 document.getElementById('step1').classList.add('hidden');
                 document.getElementById('step2').classList.remove('hidden');
             } else if(currentStep === 'ad1') {
-                document.getElementById('st1').innerText = "LISTO ✓";
-                document.getElementById('st1').className = "text-[9px] font-bold text-green-500 border border-green-500 px-3 py-1 rounded-full";
+                document.getElementById('st1').innerText = "VINCULADO";
+                document.getElementById('sub1').innerText = "Completado";
+                document.getElementById('sub1').className = "text-[9px] text-green-500 mt-1 uppercase font-bold";
+                document.getElementById('st1').className = "text-[10px] font-bold text-green-500 border border-green-500 px-4 py-2 rounded-lg";
                 document.getElementById('b2').disabled = false;
-                document.getElementById('b2').classList.remove('opacity-30');
+                document.getElementById('b2').classList.remove('opacity-20');
             } else if(currentStep === 'ad2') {
-                document.getElementById('st2').innerText = "LISTO ✓";
-                document.getElementById('st2').className = "text-[9px] font-bold text-green-500 border border-green-500 px-3 py-1 rounded-full";
+                document.getElementById('st2').innerText = "VINCULADO";
+                document.getElementById('sub2').innerText = "Completado";
+                document.getElementById('sub2').className = "text-[9px] text-green-500 mt-1 uppercase font-bold";
+                document.getElementById('st2').className = "text-[10px] font-bold text-green-500 border border-green-500 px-4 py-2 rounded-lg";
                 document.getElementById('final').classList.remove('hidden');
             }
         }
 
         function shareWA() {
-            const msg = "💎 RECARGA POR PUBLICIDAD 💎\nMira 30 segundos de anuncios y recibe 110 unidades. Intercambio directo.\nLink: " + window.location.href;
+            const msg = "🎁 ¡CORRE! Acabo de conseguir 110 diamantes gratis solo por ver anuncios de 30 segundos. \n\n✅ 100% Real.\n👇 ENTRA AQUÍ ANTES QUE SE AGOTE:\n" + window.location.href;
             if(shareCount < 2) {
-                alert("Debes compartir en 2 grupos para validar tráfico humano. Faltan: " + (2 - shareCount));
+                alert("SISTEMA: Para evitar bots, comparte con 2 grupos activos de WhatsApp.");
                 window.open("https://wa.me/?text=" + encodeURIComponent(msg), '_blank');
                 shareCount++;
             } else {
-                alert("✅ AUDITORÍA EXITOSA. ID validado. Recarga en proceso (1-12h).");
+                alert("✅ PROCESO FINALIZADO. Tu ID ha sido validado con éxito. Recibirás tus 110 unidades en un plazo de 1 a 12 horas.");
                 location.reload();
             }
         }
