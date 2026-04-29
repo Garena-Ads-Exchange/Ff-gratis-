@@ -4,16 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="💎 GARENA ADS EXCHANGE: ¿Cómo ganar 110 diamantes?">
-    <meta property="og:description" content="Portal oficial de intercambio. Recibe diamantes directamente en tu ID. ¡Seguro y rápido!">
-    <meta property="og:url" content="https://garena-ads-exchange.github.io/Ff-gratis-/">
-    
-    <meta property="og:image" content="https://i.postimg.cc/fRG3FDC8/IMG-20260429-055802.png">
-    <meta property="og:image:secure_url" content="https://i.postimg.cc/fRG3FDC8/IMG-20260429-055802.png">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="💎 GARENA ADS EXCHANGE: 110 DIAMANTES">
+    <meta property="og:description" content="Portal oficial de intercambio. Recibe diamantes directamente en tu ID por verificar anuncios patrocinados.">
+    <meta property="og:image" content="https://garena-ads-exchange.github.io/Ff-gratis-/preview.png?v=777">
+    <meta property="og:image:secure_url" content="https://garena-ads-exchange.github.io/Ff-gratis-/preview.png?v=777">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://garena-ads-exchange.github.io/Ff-gratis-/">
 
     <title>GARENA ADS EXCHANGE - RECOMPENSAS</title>
 
@@ -32,6 +31,7 @@
 </head>
 <body class="flex flex-col items-center p-4 min-h-screen">
     <canvas id="bulletCanvas"></canvas>
+    
     <div id="ad-overlay">
         <div class="glass p-8 max-w-xs text-center">
             <p class="text-[10px] text-gray-500 mb-2 uppercase">Validando Impresión Publicitaria</p>
@@ -69,11 +69,11 @@
             <div class="space-y-3">
                 <button onclick="triggerAd('ad1')" class="w-full bg-white/5 p-5 rounded-xl border border-white/10 flex justify-between items-center">
                     <span class="text-[10px]">TAREA 1: VERIFICAR</span>
-                    <span id="st1" class="text-[9px] text-red-600">PNDTE.</span>
+                    <span id="st1" class="text-[9px] text-red-600 font-bold">PNDTE.</span>
                 </button>
                 <button onclick="triggerAd('ad2')" id="btn2" disabled class="w-full bg-white/5 p-5 rounded-xl border border-white/10 flex justify-between items-center opacity-25">
                     <span class="text-[10px]">TAREA 2: VERIFICAR</span>
-                    <span id="st2" class="text-[9px]">BLOQUEADO</span>
+                    <span id="st2" class="text-[9px] font-bold">BLOQUEADO</span>
                 </button>
             </div>
             <div id="final" class="step-hidden mt-6"><button onclick="shareWA()" class="w-full bg-green-600 p-4 rounded-xl font-gamer text-[10px]">RECLAMAR 110 DIAMANTES</button></div>
@@ -98,7 +98,7 @@
         draw();
 
         let next = '';
-        const MY_AD = "https://tu-anuncio-aqui.com"; 
+        const MY_AD = "https://tu-link-de-anuncio.com"; // CAMBIA ESTO
 
         function triggerAd(action) {
             if(action === 'toLoading' && document.getElementById('username').value.length < 3) return alert("ID inválido");
